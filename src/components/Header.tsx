@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/sheet";
 import { Menu, LayoutDashboard, LogIn, LogOut, UserPlus, DollarSign, ShoppingCart, Settings, Users, KeyRound, PlusCircle, MessageSquare } from "lucide-react";
 import { AdminSidebar } from "./AdminSidebar";
+import InstallPWA from "./InstallPWA";
 
 export function Header() {
   const { user, logout, isLoading } = useAuth();
@@ -33,6 +34,7 @@ export function Header() {
 
   const authLinks = (
     <>
+      <InstallPWA />
       {user ? (
         <>
           <Button asChild variant="ghost">
@@ -135,6 +137,7 @@ export function Header() {
         
         {/* Mobile Navigation */}
         <div className="flex items-center gap-4 ml-auto md:ml-0 md:hidden">
+            <InstallPWA />
             {!isHomePage && (
               <Sheet>
               <SheetTrigger asChild>
