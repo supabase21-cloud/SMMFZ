@@ -5,6 +5,7 @@
 
 import { supabase } from "./supabase";
 import type { User, Order, Service, NewOrder, NewUser, ServicePrices, PlaceOrderResult } from "@/types";
+import { sendNewOrderNotification } from "@/ai/flows/notification-flow";
 
 // --- USER MANAGEMENT ---
 export const getUser = async (email: string): Promise<User | null> => {
@@ -304,11 +305,21 @@ export const placeOrder = async (newOrder: NewOrder): Promise<PlaceOrderResult> 
         return { success: false, error: 'Failed to create order in database.' };
     }
 
+    // After successful order, deduct funds and send notification
     if (totalPrice > 0) {
         const newBalance = user.funds - totalPrice;
         await setUserFunds(user.email, newBalance);
     }
     
+    // Trigger notification flow (don't wait for it to complete)
+    sendNewOrderNotification({
+        orderId: createdOrder.id,
+        username: user.username,
+        serviceType: service.type,
+        platform: service.platform,
+    }).catch(e => console.error("Failed to send notification:", e));
+
+
     const resultOrder: Order = {
         id: createdOrder.id,
         userEmail: createdOrder.user_email,
