@@ -5,7 +5,9 @@ import { getToken } from "firebase/messaging";
 import { messaging } from "./firebase";
 import { supabase } from "./supabase";
 
-const VAPID_KEY = "BN5T6jU_E9d-Yq4VNu2Sxg_5Y-k-kXvjGz_wZc4YJ5rX8nZq9vE8sC7oQ3fJ-fHlI0bL_wZc4YJ5rX8nZq9vE";
+// IMPORTANT: You must get your VAPID key from your Firebase project settings
+// and add it to your Vercel environment variables as NEXT_PUBLIC_FIREBASE_VAPID_KEY
+const VAPID_KEY = process.env.NEXT_PUBLIC_FIREBASE_VAPID_KEY;
 
 export const requestNotificationPermission = async () => {
   if (!messaging) {
@@ -13,6 +15,11 @@ export const requestNotificationPermission = async () => {
     return null;
   }
   
+  if (!VAPID_KEY) {
+    console.error("VAPID key is missing. Please set NEXT_PUBLIC_FIREBASE_VAPID_KEY in your environment variables.");
+    return null;
+  }
+
   try {
     const permission = await Notification.requestPermission();
     if (permission === "granted") {
