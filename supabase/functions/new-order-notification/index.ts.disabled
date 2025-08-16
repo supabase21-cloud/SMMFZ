@@ -1,0 +1,4 @@
+// This function has been permanently disabled to resolve a critical security issue
+// related to exposed credentials in the git history.
+// It can be re-enabled later using a new file and secure 
+// environment variables for all secrets.

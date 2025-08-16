@@ -1,0 +1,21 @@
+{
+  "name": "FZBoostify",
+  "short_name": "FZBoostify",
+  "description": "Elevate your social media presence with FZBoostify.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#fd5f0e",
+  "icons": [
+    {
+      "src": "https://i.postimg.cc/hXXxpK3k/IMG-20250808-WA0265.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.postimg.cc/hXXxpK3k/IMG-20250808-WA0265.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
