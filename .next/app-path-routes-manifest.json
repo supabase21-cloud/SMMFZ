@@ -1,0 +1,18 @@
+{
+  "/favicon.ico/route": "/favicon.ico",
+  "/_not-found/page": "/_not-found",
+  "/app/(app)/order/page": "/app/order",
+  "/page": "/",
+  "/(app)/dashboard/page": "/dashboard",
+  "/(app)/deposit/page": "/deposit",
+  "/(app)/order/page": "/order",
+  "/(auth)/login/page": "/login",
+  "/(auth)/register/page": "/register",
+  "/admin/comments/page": "/admin/comments",
+  "/admin/credentials/page": "/admin/credentials",
+  "/admin/orders/page": "/admin/orders",
+  "/admin/page": "/admin",
+  "/admin/pricing/page": "/admin/pricing",
+  "/admin/services/page": "/admin/services",
+  "/admin/users/page": "/admin/users"
+}

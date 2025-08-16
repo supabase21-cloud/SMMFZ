@@ -1,0 +1,17 @@
+{
+  "node": {
+    "40bd7c16089a55e72f14d7a1ca980151aa41f52c84": {
+      "workers": {
+        "app/page": {
+          "moduleId": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/ai/flows/notification-flow.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "a2fdku8UUbaxvlC6pGbgRZCUBa5HyD5lgCeTe/ZywvI="
+}
